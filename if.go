@@ -58,6 +58,10 @@ func (ifce *Interface) Name() string {
 	return ifce.name
 }
 
+func (ifce *Interface) File() *os.File {
+	return ifce.file
+}
+
 // Implement io.Writer interface.
 func (ifce *Interface) Write(p []byte) (n int, err error) {
 	n, err = ifce.file.Write(p)
